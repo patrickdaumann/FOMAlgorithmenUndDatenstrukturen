@@ -45,7 +45,7 @@ class DoublyLinkedList:
 
 ######Testing Code##############################
 #Verbose Mode: Set Printing for list-inserts and list-deletes
-verbose: bool = True
+verbose: bool = False
 
 #Init list
 list1 = DoublyLinkedList()
