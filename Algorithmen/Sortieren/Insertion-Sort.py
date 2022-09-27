@@ -26,11 +26,11 @@ def InsertSort(A):
         A[i+1] = key
 
 
-#initalize array
+#initialize array
 n = 10
 feld = []
 
-#initalize array with random integers
+#initialize array with random integers
 for i in range(n):
     feld.append(randint(100, 999))
 
