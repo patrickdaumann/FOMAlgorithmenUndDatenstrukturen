@@ -14,9 +14,9 @@ Insertion-Sort(A,n)
         A[i+1] = key
 """
 
-#Insert Sort Algorithmus
+#insert sort algorithm
 def InsertSort(A):
-    '''Sortiert das angegebene Feld A mit dem Insert-Sort Algorithmus (destruktiv)'''
+    '''sorts given Array with insertion sort algorithm (destructive)'''
     for j in range(1, len(A)):
         key = A[j]
         i = j-1
@@ -26,19 +26,19 @@ def InsertSort(A):
         A[i+1] = key
 
 
-#Feld initialiseren
+#initalize array
 n = 10
 feld = []
 
-#Feld mit Zufallszahlen fuellen
+#initalize array with random integers
 for i in range(n):
     feld.append(randint(100, 999))
 
-#Ausgabe des unsortierten Feldes
+#Print unsorted array
 print(f"Unsortiert:\t {feld}")
 
-#Sortieren des Feldes
+#sort array
 InsertSort(feld)
 
-#Ausgabe des sortierten Feldes
+#print sorted array
 print(f"Sortiert:\t {feld}")
