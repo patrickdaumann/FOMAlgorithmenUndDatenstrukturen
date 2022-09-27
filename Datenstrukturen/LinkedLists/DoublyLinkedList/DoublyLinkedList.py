@@ -1,6 +1,6 @@
 from random import randint
 
-# Class
+# Class definitions
 class node:
     def __init__(self, dataval):
         self.next = None
