@@ -1,23 +1,29 @@
-def HashInsert(A, key, f):
-    A[f(key, len(A))] = key
+class HashTable:
+    
+    def __init__(self, size):
+        self.data = [None] * size
+        self.hashfunc = lambda x, n: x % n
 
-def HashSearch(A, key, f):
-    return A[f(key, len(A))]
+    def HashInsert(self, key):
+        self.data[self.hashfunc(key, len(self.data))] = key
 
-def HashDelete(A, key, f):
-    A[f(key, len(A))] = None 
+    def HashSearch(self, key):
+        return [self.hashfunc(key, len(self.data))]
+
+    def HashDelete(self, key):
+        self.data[self.hashfunc(key, len(self.data))] = None
+    
+    def print(self):
+        print(self.data)
 
 
-n = 8
-A = [None] * n
-hash = lambda x, n: x % n
 
-HashInsert(A, 10, hash)
-HashInsert(A, 11, hash)
-HashInsert(A, 12, hash)
-print(A)
+test = HashTable(10)
+test.HashInsert(10)
+test.HashInsert(2)
+test.HashInsert(3)
 
-print(HashSearch(A, 10, hash))
+test.print()
 
-HashDelete(A, 10, hash)
-print(A)
+test.HashDelete(3)
+test.print()
