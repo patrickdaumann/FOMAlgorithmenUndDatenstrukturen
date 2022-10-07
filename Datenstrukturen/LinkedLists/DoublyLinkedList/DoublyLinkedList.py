@@ -36,13 +36,15 @@ class DoublyLinkedList:
 
     def PrintList(self):
         x = self.head
+        if x == None:
+            print("[Empty List]", end="")
+
         while x != None:
-            print(x.dataval, end= " ")
+            print(f"{x.dataval}", end= " ")
             x = x.next
+        
         else:
             print("")
-
-
 ######Testing Code##############################
 #Verbose Mode: Set Printing for list-inserts and list-deletes
 verbose: bool = False
