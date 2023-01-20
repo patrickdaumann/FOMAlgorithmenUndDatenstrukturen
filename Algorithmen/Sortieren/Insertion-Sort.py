@@ -26,19 +26,31 @@ def InsertSort(A):
         A[i+1] = key
 
 
-#initialize array
-n = 10
-feld = []
+def testcode1():
+    #initialize array
+    n = 10
+    feld = []
 
-#initialize array with random integers
-for i in range(n):
-    feld.append(randint(100, 999))
+    #initialize array with random integers
+    for i in range(n):
+        feld.append(randint(100, 999))
 
-#Print unsorted array
-print(f"Unsortiert:\t {feld}")
+    #Print unsorted array
+    print(f"Unsortiert:\t {feld}")
 
-#sort array
-InsertSort(feld)
+    #sort array
+    InsertSort(feld)
 
-#print sorted array
-print(f"Sortiert:\t {feld}")
+    #print sorted array
+    print(f"Sortiert:\t {feld}")
+
+def testcode2():
+    with open("Algorithmen/Sortieren/peformancetests/IntSet_100k.txt", 'r') as f:
+        strarr = f.readlines()
+
+    arr = [int(x) for x in strarr]
+
+    InsertSort(arr)
+
+
+testcode1()

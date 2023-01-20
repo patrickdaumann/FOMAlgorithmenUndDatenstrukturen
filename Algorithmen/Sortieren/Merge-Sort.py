@@ -47,9 +47,22 @@ def merge(left, right):
 ##############################################
 #Testcode
 
-#Definition des zu Sortierenden Array
-arr = [5,9,6,8,2,1,0,8,6]
+def testcode1():
+    #Definition des zu Sortierenden Array
+    arr = [5,9,6,8,2,1,0,8,6]
 
-#Ausgabe Unsortiert und Sortiert.
-print(f"Unsortiert:\t {arr}")
-print(f"Sortiert:\t {merge_sort(arr)}")
+    #Ausgabe Unsortiert und Sortiert.
+    print(f"Unsortiert:\t {arr}")
+    print(f"Sortiert:\t {merge_sort(arr)}")
+
+
+def testcode2():
+    with open("Algorithmen/Sortieren/peformancetests/IntSet.txt", 'r') as f:
+        strarr = f.readlines()
+
+    arr = [int(x) for x in strarr]
+
+    merge_sort(arr)
+
+
+testcode2()

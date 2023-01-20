@@ -49,7 +49,20 @@ def heapify(arr, n, i):
 ################
 # Testcode
 
-arr = [2, 4, 63, 34, 7, 34, 6, 32, 1, 6, 89]
+def testcode1():
+    arr = [2, 4, 63, 34, 7, 34, 6, 32, 1, 6, 89]
 
-print(f"Unsortiert:\t{arr}")
-print(f"Sortiert:\t{heap_sort(arr)}")
+    print(f"Unsortiert:\t{arr}")
+    print(f"Sortiert:\t{heap_sort(arr)}")
+
+
+def testcode2():
+    with open("Algorithmen/Sortieren/peformancetests/IntSet.txt", 'r') as f:
+        strarr = f.readlines()
+
+    arr = [int(x) for x in strarr]
+
+    heap_sort(arr)
+
+
+testcode2()
