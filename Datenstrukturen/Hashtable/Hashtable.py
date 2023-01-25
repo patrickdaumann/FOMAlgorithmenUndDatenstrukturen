@@ -2,11 +2,22 @@ class HashTable(object):
     def __init__(self, size):
         self.values = [None] * size
 
-    def hashfunction(self, x: int):
+    def inthash(self, x: int):
         return x % len(self.values)
 
+    def strhash(self, x: str):
+        n = 0
+        for i in x:
+            n += ord(i)
+        
+        return n %len(self.values)
+
     def insert(self, value: any):
-        index = self.hashfunction(value)
+        if isinstance(value, int):
+            index = self.inthash(value)
+        elif isinstance(value, str):
+            index = self.strhash(value)
+        
         if self.values[index] == None:
             self.values[index] = LinkedList()
         
@@ -48,8 +59,9 @@ class LinkedList(object):
 # Testcode
 H1 = HashTable(10)
 
-for i in range(100):
+for i in range(10):
     H1.insert(i)
 
+H1.insert("Test")
 
 H1.PrintValues()
